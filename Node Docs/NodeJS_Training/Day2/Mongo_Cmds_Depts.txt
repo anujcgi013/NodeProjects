@@ -1,0 +1,90 @@
+
+MongoDb 
+~~~~~~~~
+
+
+-->   Collection 	---	  	Table
+-->   document 	---	  	Row
+
+
+
+Required Folder:			 	d:/data/db
+
+Starts the mongodb server:		
+	D:>	mongod
+	
+	
+Note:  	MongoDb runs at the port :  27017	
+	
+
+	
+Starts the mongodb client:		
+
+	--->  working with databases, document and collections
+	
+
+		D:>	mongo
+
+-------------------------------------------------------------------------
+
+
+
+show dbs
+use testdb
+-------------------------------------
+db.createCollection("depts")   
+show collections
+---------------------------------------------------------------
+
+JSON/JavaScript Objects
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1.  Create
+
+		// Insert single document.	
+		db.depts.insertOne( {deptno:10, dname: "Accounts", loc: "Hyd"} )
+
+		// Insert collection of  documents.
+		db.depts.insert(
+		[
+			{deptno:10, dname: "Accounts", loc: "Hyd"},
+			{deptno:20, dname: "Sales", loc: "Pune"},
+			{deptno:30,dname: "Marketing", loc:"Chennai"}, 
+			{deptno:40,dname: "Operations", loc:"Mumbai"}, 
+			{deptno:50,dname: "Finanace", loc:"Hyd"}	
+		])
+
+2.   Read
+
+		db.depts.find()
+		db.depts.find({},  {_id:0})
+		db.depts.find({},  {_id:0, dname : 1})		
+		db.depts.find({loc : "Hyd"},  {_id:0})
+		
+		
+3.   Update
+
+
+	db.depts.update(SELECTIOIN_CRITERIA, UPDATED_DATA);
+	db.depts.update(where,  set);
+	db.depts.update(where,  set, multiple);
+
+	db.depts.update({}, {});
+	db.depts.update({}, {}, {});
+
+	db.depts.update({"loc":"Hyd"}, { $set : { "loc":"Chennai"}  })
+	db.depts.update({"loc":"Chennai"}, { $set : { "loc":"New Delhi"}}, {multi : true})
+
+		
+4.   Delete		
+		
+		db.depts.remove({})	// Remove all records
+		db.depts.remove({deptno:50})  	
+		db.depts.remove({loc:"Hyd"})	 	// Removes all hyd
+		db.depts.remove({loc:"Hyd"}, 1)		// Removes only one
+		
+		
+-----------------------------------------------------------------------------------------------		
+		
+		
+		

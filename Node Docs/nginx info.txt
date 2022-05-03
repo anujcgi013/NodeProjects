@@ -1,0 +1,108 @@
+ Install and Configure Nginx Server
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+
+-->   Nginx HTTPS Reverse Proxy Overview. 
+
+	
+		A Nginx HTTPS reverse proxy is an intermediary proxy service which takes a client request, passes it on to one or more servers, and subsequently delivers the server's response back to the client. ... By using a Nginx reverse proxy all applications can benefit from these features.
+
+	
+	
+Download the nginx software from the below url:
+
+		https://nginx.org/en/
+		https://nginx.org/en/download.html
+		
+		
+Download Link:		https://nginx.org/download/nginx-1.21.1.zip
+
+--> Download, Extract and copy the folder and paste C:\ Drive.
+
+		c:\>
+			[  nginx-1.21.1  ]
+			
+			
+Update  the configuration file for port number. by default it refers 80, if want to change update the config file:
+
+	File Path:  	C:\nginx-1.21.1\conf\nginx.conf
+	
+	Go to server Section in the above file:
+	
+		 server {
+                        listen       80;
+                        server_name  localhost;
+                        ....
+                    }
+		
+		Note:  In the above config file , server section,  update listen  8070;   (8070 sample port number)
+		
+			
+Start the server  :
+	
+C:\nginx-1.21.1>start  nginx
+
+
+	Check the server is running or not by browsing the following url:
+			
+			Url:			http://localhost:8070/
+			
+			It will show welcome  to Nginx   message  --- web page. 
+
+
+Run the tasklist command-line utility to see nginx processes:
+
+C:\nginx-1.21.1>tasklist /fi "imagename eq nginx.exe"
+
+
+
+Note:  We recommend that each time you complete a set of updates to the configuration, you run the nginx -t command to test the configuration file for syntactic validity.
+
+C:\nginx-1.21.1>nginx -t
+nginx: the configuration file C:\nginx-1.21.1/conf/nginx.conf syntax is ok
+nginx: configuration file C:\nginx-1.21.1/conf/nginx.conf test is successful
+	
+---------------------------------------------------------------------------------------------------------
+
+Node JS Application deployment using Nginx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Start the node server
+2. Update the nginx.config file   -->  location section under server section:
+
+
+ server {
+        listen       8060;
+        server_name  localhost;
+
+	location / {
+            proxy_pass  http://localhost:3002;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade; 
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+		...
+	}
+		
+3. Validate the configuration 
+
+	C:\nginx-1.21.1>nginx -t
+
+4. Execute the following command to restart the server
+	
+	nginx -s reload
+	
+	
+	
+	
+	
+	
+References Url:
+	
+	https://nginx.org/en/docs/windows.html
+	http://nginx.org/en/download.html
+		
+	
+	https://medium.com/today-i-learned-chai/setup-node-js-application-with-pm2-and-nginx-72840f44ea73

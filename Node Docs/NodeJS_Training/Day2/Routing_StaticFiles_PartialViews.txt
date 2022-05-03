@@ -1,0 +1,112 @@
+1.  Create controllers in a separate folder.	----	Routing
+2.  Integrate UI specific libraries (eg: bootstrap)   in view templates  (*.ejs)
+3.  How to include partial views (reusable ui logic)  in view templates
+4.  Latest updates on body-parser middleware
+5.  How to process static files in express application
+	
+	http://localhost:3001/Image1.jpg	
+  
+   
+
+ 1.  Create controllers in a separate folder.	----	Routing
+ 
+  
+	controller.js 
+			const  router =  express.Router();		
+			router.get()	
+			router.post()
+			module.export = router;
+			
+	index.js
+			const deptController = require("./controllers/deptController");
+			
+			app.use( deptController );
+			app.use( "/depts", deptController );
+			
+			
+	
+	2.  Integrate UI specific libraries (eg: bootstrap)   in view templates  (*.ejs)
+	
+	Import the required libraries:
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+		<script>
+			// jquery code
+		</script>
+		
+		
+		Apply bootstrap styles
+		
+		<input type="button"  class="btn  btn-primary"  value="Login"   />
+		<br/><br/>
+		
+
+
+3. How to include partial views (reusable ui logic)  in view templates
+	
+	1.  create separate view and preapre the content to share across the other views.
+	
+			header.ejs
+			~~~~~~~~~
+			
+			
+	2.  Include in other views:			
+			
+		<%- include('header.ejs') %>
+	
+4.  Latest updates on body-parser middleware
+
+
+		// For Express version less than 4.16.0
+		// ------------------------------------
+		const bodyParser = require('body-parser');
+		app.use(bodyParser.json());
+		app.use(bodyParser.urlencoded({ extended: true  }));
+
+
+		// For Express version greater than 4.16.0
+		app.use(express.json());
+		app.use(express.urlencoded({
+		  extended: true
+		}));
+
+5.  How to process static files in express application
+
+		a.  create separate folder to place all static files (eg:  images, audio, css, files...)
+				Folder Name  :   public 
+				
+		b.   Place the required files in public folder
+
+		c.   Register public folder as static using static() method:
+						app.use(express.static('public'))	
+		
+	
+	
+	
+	
+	
+	
+	data.deptsArray  =   deptModel.find()
+	
+	
+	var data = {};
+	
+	deptModel.find(options, callback);
+	
+	
+	deptModel.find({}, function(err, resData) 
+	{
+		if(err)	 {  
+			console.log(err); 
+			return; 
+		}
+		
+		var str  =  __dirname + "/Views/home"; 
+		data.deptsArray =  resData;
+		res.render(str, data);		
+	});

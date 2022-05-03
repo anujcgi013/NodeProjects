@@ -1,0 +1,69 @@
+
+Angular
+~~~~~~
+--->  Current Version - Angular12
+--->  angular is client side framework to build web applications
+--->  open source
+--->   typescript language (  80% js  + new concepts )
+--->   80%  application development
+
+
+
+------------------------------------------------------------------------------
+
+
+Env. setup
+~~~~~~~~~
+1. Node js   --- https://nodejs.org/en/
+2. >	npm install -g  typescript
+3. >	npm install -g  @angular/cli
+4. VS code  Editor   --   https://code.visualstudio.com/download
+
+
+Project creation and execution
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.  	Create   D:/AngularApp
+
+2.     D:/AngularApp>  ng   version
+		D:/AngularApp>  ng   new   my-project
+		
+		
+3.   D:/AngularApp>  cd my-project		
+	  D:/AngularApp/my-project>  ng  s  -o
+	  
+------------------------------------------------------------------------------------------------------------------------------	  
+	  
+Angular Development
+	  
+	---  component based development  
+	---  component files
+	
+			[src/app]
+			--->  app.component.ts
+			--->  app.component.html
+			--->  app.component.css
+			--->  app.component.spec.ts
+			--->  app.module.ts
+			
+-----------------------------------------------------------------------------------------------------------------------			
+			
+			
+			
+			  
+	  
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+

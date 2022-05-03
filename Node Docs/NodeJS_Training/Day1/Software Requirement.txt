@@ -1,0 +1,18 @@
+ 1. VS Code  (Editor)
+ https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user
+ 
+ 2. Node JS
+https://nodejs.org/dist/v14.17.5/node-v14.17.5-x64.msi
+
+3. MongoDb   --- No Sql Database
+https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-5.0.2-signed.msi
+
+4. Nginx   --- for
+https://nginx.org/download/nginx-1.21.1.zip
+
+ 5. Git  for OpenSSL
+https://github.com/git-for-windows/git/releases/download/v2.33.0.windows.2/Git-2.33.0.2-64-bit.exe
+
+
+    Update Environment Variable for OpenSSL:    C:\Program Files\Git\usr\bin
+

@@ -1,0 +1,85 @@
+show dbs
+use testdb
+-------------------------------------
+db.createCollection("emps")   // with _id
+db.createCollection("emps", { autoIndexId: false })   // without _id
+db.emps.createIndex({empno:1},{unique:true})
+
+
+
+db.emps.insert( 
+{"empno":6589,"ename":"SriRam","job":"Sr.Manager","sal":3200,"deptno":30} 
+)
+
+
+
+db.emps.remove({'empno':6589})
+
+
+
+
+db.emps.insert(
+[
+{"empno":6589,"ename":"SRIRAM","job":"MANAGER","sal":3200,"deptno":30},
+{"empno":7369,"ename":"SMITH","job":"CLERK","sal":800,"deptno":20},
+{"empno":7499,"ename":"ALLEN","job":"SALESMAN","sal":1600,"deptno":30},
+{"empno":7521,"ename":"WARD","job":"SALESMAN","sal":1250,"deptno":30},
+{"empno":7566,"ename":"JONES","job":"MANAGER","sal":2975,"deptno":20},
+{"empno":7654,"ename":"MARTIN","job":"SALESMAN","sal":1250,"deptno":30},
+{"empno":7698,"ename":"BLAKE","job":"MANAGER","sal":2850,"deptno":30},
+{"empno":7782,"ename":"CLARK","job":"MANAGER","sal":2450,"deptno":10},
+{"empno":7839,"ename":"KING","job":"PRESIDENT","sal":5000,"deptno":10},
+{"empno":7844,"ename":"TURNER","job":"SALESMAN","sal":1500,"deptno":30},
+{"empno":7876,"ename":"ADAMS","job":"CLERK","sal":1100,"deptno":20},
+{"empno":7900,"ename":"JAMES","job":"CLERK","sal":950,"deptno":30},
+{"empno":7902,"ename":"FORD","job":"ANALYST","sal":3000,"deptno":20},
+{"empno":8545,"ename":"KIRAN","job":"MANAGER","sal":5890,"deptno":10}
+]
+ )
+ 
+  
+ 
+ db.emps.find( { job: "MANAGER" } ).count()
+ db.emps.find({"sal":  {$gt:2500}   }).count()
+ db.emps.find({"sal":  {$gt:2500}   }, {_id:0,  ename:1})
+ 
+ 
+ db.emps.drop()
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Limit
+------
+db.emps.find({},{empno:1, ename:1, job:1, _id:0})
+db.emps.find({},{empno:1, ename:1, job:1, _id:0}).limit(3)
+db.emps.find({},{empno:1, ename:1, job:1, _id:0}).skip(5)
+db.emps.find({},{empno:1, ename:1, job:1, _id:0}).limit(5).skip(2)
+db.emps.find({},{empno:1, ename:1, job:1, _id:0}).skip(2).limit(5)
+  
+  
+Sorting
+---------
+db.emps.find({},{_id:0}).sort({ename:1}) 		// Ascending
+db.emps.find({},{_id:0}).sort({ename:-1})     // Descending
+
+
+db.emps.find({},{ename:1, job:1, sal:1, _id:0}).sort({ename:1})
+db.emps.find({},{ename:1, job:1, sal:1, _id:0}).sort({job:1, sal:1})
+db.emps.find({},{ename:1, job:1, sal:1, _id:0}).sort({job:1, sal:-1})
+ 
+------------------------------------------------------------------------ 
+db.emps.distinct("job")
+[ "MANAGER", "CLERK", "SALESMAN", "PRESIDENT", "ANALYST" ]
+
+db.emps.distinct("deptno")
+[ 30, 20, 10 ] 
+----------------------------------------------------------------------
+  
+  

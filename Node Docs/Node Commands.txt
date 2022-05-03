@@ -1,0 +1,61 @@
+Node Js - 
+ > V8 Enginer
+ > npm install express (Local) / npm install -g express (Global)
+ > npm install cors --save (Save into package.json)
+ > npmjs.com
+ > npm i -g express cors etc (For multiple package install in 1 command)
+ > npm init (for Initial Configuration of node App)
+   -- this will generate package.json
+ > Node Index.js > Run the index file
+ > https://www.npmjs.com/package/lodash - Basic operations of JS package
+ >>> Created Express App - 
+  > npx express-generator
+  > npm install
+
+
+ 
+ 
+ Assignment 1 - 
+ ProductModule:
+						pid, pname, price, qty		--- array of objects
+						
+			Index.js
+				-- Read data from the array
+				-- Write the products details into file stream ---   WriterStream
+
+> npm install body-parser --save
+> Loopback Vs Express
+> npm install ejs --save
+> Mango Compass
+https://www.mongodb.com/try/download/community
+tnrao.trainer@gmail.com
+https://drive.google.com/drive/folders/1O-BarIzBqRmLMhoT-XZA84ZGcKYtxEin?usp=sharing
+ 
+ > npm i mongoose --save
+ 
+ >>>>mongoose connection with credentials:
+      > mongoose.connect('mongodb://username:password@host:port/database');
+
+MongoDb 
+~~~~~~~~
+
+
+-->   Collection 	---	  	Table
+-->   document 	---	  	Row
+
+Required Folder:			 	d:/data/db
+
+Starts the mongodb server:		
+	D:>	mongod
+	
+Note:  	MongoDb runs at the port :  27017	
+	
+Starts the mongodb client:		
+
+	--->  working with databases, document and collections
+	
+
+		D:>	mongo
+
+
+

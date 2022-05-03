@@ -1,0 +1,26 @@
+<h3>All Departments Details</h3>
+<hr/>
+
+
+
+<table border="2" width="400"  cellspacing="0"  cellpadding="5">
+    <tr>
+            <th>Deptno</th>
+            <th>Dname</th>
+            <th>Location</th>
+            <th></th>
+    </tr>   
+    
+    <%  for(let i in  deptsArray)
+        {  %>
+          <tr>
+            <td> <%=deptsArray[i].deptno %> </td>
+            <td> <%=deptsArray[i].dname %> </td>
+            <td> <%=deptsArray[i].loc %> </td>
+            <td>
+                <a href="/details/<%=deptsArray[i].deptno %>">Details</a>
+            </td>
+          </tr>
+      <% } %>
+    
+</table>

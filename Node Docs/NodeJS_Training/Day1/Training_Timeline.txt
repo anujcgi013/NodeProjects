@@ -1,0 +1,20 @@
+
+Forenoon   (9 am to 1 pm)
+
+09:00   to 10:30  	--- 	Technical Session
+10:30   to 10:40		---	 	Short break
+10:40   to 11:15  	---  	Practical Assignment
+11:15   to 12:15  	---	 	Technical Session
+12:15   to 12:45 		---	  	Practical Assignment
+12:45   to 01:00 		---	  	Q & A
+
+
+Afternoon 	(2 pm to 6 pm)
+
+2:00   to 	3:30  		--- 	Technical Session
+3:30   to 	3:40			---	 	Short break
+3:40   to  4:15  		---  	Practical Assignment
+4:15   to  5:15  		---	 	Technical Session
+5:15   to 	5:45 		---	  	Practical Assignment
+5:45   to  6:00 			---	  	Q & A
+

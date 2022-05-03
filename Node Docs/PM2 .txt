@@ -1,0 +1,29 @@
+PM2   FOR NODE.JS
+~~~~~~~~~~~~~~~~~
+
+--> PM2 is a process management module for Node.js applications. 
+--> It is used to start and monitor Node.js application so if the application goes down ( for example if the node index.js process dies) the process manager will restart the app immediately making it available once again. 
+
+--> PM2 is a daemon process manager that will help you manage and keep your application online 24/7
+
+
+Reference Urls:
+https://pm2.keymetrics.io/
+https://pm2.keymetrics.io/docs/usage/quick-start/
+
+
+Installation:				npm install pm2 -g
+		
+		
+Important commands:		
+		
+	D:\NodeApp> pm2 start app.js
+	D:\NodeApp> pm2 start app.js   --name "MyDemoAppâ€œ
+	D:\NodeApp> pm2 list
+	D:\NodeApp> pm2 restart 0
+	D:\NodeApp> pm2 stop 0         (where 0 is id)
+	D:\NodeApp> pm2 delete 0         (where 0 is id)
+
+		
+						
+						

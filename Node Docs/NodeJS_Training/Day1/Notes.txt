@@ -1,0 +1,156 @@
+
+
+NPM
+~~~~~
+
+>   npm   install  -g   express 			// global
+
+	--->  All apps in the system
+
+>   npm   install  express 					//  local
+	--->  Available only in current application
+
+>   npm   install  express   --save			
+			-->  Save the package details as dependency list  (package.json)
+
+	
+	
+>		npm 	i   express   cors   mongoose    --save
+
+>   npm   install  express 
+>   npm   install  cors
+>   npm 	i 	mongoose
+
+
+
+Local
+D:\NodeServerApp>npm   install  express
+
+
+Global
+D:\NodeServerApp>npm   install  -g   express
+
+
+D:\TodoListApp>npm install
+
+
+--------------------------------------------------------------------------------
+
+Node Application Creation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. npm  init
+
+	--- for initial configuration of node application
+	--- this will generate package.json
+		
+2. Install any additional packages in your application
+
+	>   npm i express --save
+
+
+------------------------------------------------------------------------------------------------------
+
+
+
+
+confimOrder	----		sendEmail()
+confimOrder	----		sendSMS()
+
+
+
+
+var sendMail = function () 
+{
+	console.log("Thanks for confirming order.");
+	console.log("You will get email with detailed information about order.");
+};
+
+
+// Named Function
+emitObj.on("confimOrder", sendMail);
+----------------------------------------------------------------------------------
+
+
+
+// Anonymous Function
+emitObj.on("confimOrder", function () 
+{
+	console.log("Thanks for confirming order.");
+	console.log("You will get email with detailed information about order.");
+});
+
+------------------------------------------------------------------------
+
+
+Data 
+
+	1.  Scalar	
+	2.  Arrays
+	3.  Object
+	4.  Array of Objects
+	
+
+--------------------------------------------------------------------------------------
+
+
+
+1. Modules, Strems
+
+
+	--- Create a node application to process product details using streams and modules:
+	
+			ProductModule:
+						pid, pname, price, qty		--- array of objects
+						
+			Index.js
+				-- Read data from the array
+				-- Write the products details into file stream ---   WriterStream
+				
+-----------------------------------------------------------------------------------------------------------				
+					
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
